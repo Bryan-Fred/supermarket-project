@@ -11,3 +11,155 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.header {
+  background-color: rgb(72, 93, 102);
+  padding: 1rem;
+}
+
+.header nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.promo-section {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+}
+
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  width: 100%;
+}
+
+.text {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  color: white;
+  font-size: 20px;
+  padding: 8px 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
+.featured-products {
+  margin: 2rem;
+  position: relative;
+}
+
+.featured-products h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.products-container {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.product {
+  flex: 0 0 auto;
+  width: 200px;
+  margin: 0 1rem;
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.arrow-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  left: 0;
+}
+
+.right-arrow {
+  right: 0;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: rgb(72, 93, 102);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
