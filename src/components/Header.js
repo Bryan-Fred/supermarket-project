@@ -10,6 +10,7 @@ const Header = () => {
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
+      <div className="hamburger-meu"></div>
     </header>
   );
 };
