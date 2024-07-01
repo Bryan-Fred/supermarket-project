@@ -34,9 +34,13 @@ const FeaturedProducts = () => {
       <div className="products-container">
         {products.map(product => (
           <div className="product" key={product.id}>
+          <div className= "product-image-container">
             <img src={product.img} alt={product.name} />
+          </div>
+          <div className="product-name-price">
             <h3>{product.name}</h3>
             <p className="price">{product.price}</p>
+          </div>
             <button className="quick-view-btn" onClick={() => openModal(product)}>Quick View</button>
           </div>
         ))}
