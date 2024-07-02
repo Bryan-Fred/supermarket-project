@@ -105,7 +105,7 @@ code {
 
 .products-container {
   display: flex;
-  overflow-x: hidden;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   height: 500px;
@@ -117,7 +117,7 @@ code {
   display: grid;
   grid-template-rows: 1fr 100px 50px;
   background-color: white;
-  border: 1px solid #ddd;
+  border: 1px solid #080202;
   margin: 10px;
   width: 200px;
   transition: box-shadow 0.3s;
@@ -130,7 +130,7 @@ code {
 }
 
 .product-image-container{
-  background-color: #666;
+  background-color: white;
 }
 
 .product img {
@@ -204,8 +204,8 @@ code {
 .close {
   color: #aaa;
   float: right;
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: bolder;
 }
 
 .close:hover,
@@ -309,24 +309,33 @@ code {
 
 @media(max-width: 600px){
     .featured-products{
-    background-color: #c0dff1;
+    background-color: #dffffb;
     padding-bottom: 10px;
   }
   .featured-products h2 {
-    font-size: 20px;
+    font-size: 22px;
+  }
+  .products-container {
+    padding-bottom: 20px;
+    width:85%;
   }
   .product{
     height: 200px;
-    width: 100px;
+    width: 120px;
     grid-template-rows: 1fr 50px 30px;
     padding: 0;
     margin: 5px;
+    border: none;
   }
   .product-image-container{
-    background-color: #b7c0c5;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    object-fit: contain;
   }
-  .product-name-price{
-    
+  .product img {
+    width: 100%;
+    height: 110px;
   }
   .product-name-price{
     display: grid;
@@ -343,9 +352,31 @@ code {
     font-size: 12px;
   }
   .quick-view-btn {
-    font-size: 12px;
+    font-size: 13px;
   }
   .products-container{
     height: auto;
+  }
+  .arrow-container{
+    border: 1px solid rgb(121, 119, 119);
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+  }
+  .left-arrow{
+    left: 10px;
+  }
+  .right-arrow{
+    right: 10px;
+  }
+  .modal-content{
+    max-height: 500px;
+  }
+  .modal-image-container{
+    height: 200px;
+    width: 150px;
+    border: 1px solid black;
+    position: relative;
+    left: 25%;
   }
 }

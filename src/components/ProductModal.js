@@ -5,7 +5,9 @@ const ProductModal = ({ product, closeModal }) => {
     <div className="modal">
       <div className="modal-content">
         <span className="close" onClick={closeModal}>&times;</span>
-        <img src={product.img} alt={product.name} />
+        <div className="modal-image-container">
+          <img src={product.img} alt={product.name} />
+        </div>
         <h3>{product.name}</h3>
         <p>{product.price}</p>
         <p>Product description goes here.</p>
