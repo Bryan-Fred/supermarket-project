@@ -6,11 +6,15 @@ const FeaturedProducts = () => {
   const [modalContent, setModalContent] = useState(null);
 
   const products = [
-    { id: 'modal1', img: riceImage, name: 'Product 1', price: '$10.00' },
-    { id: 'modal2', img: riceImage, name: 'Product 2', price: '$12.00' },
-    { id: 'modal3', img: riceImage, name: 'Product 3', price: '$8.00' },
-    { id: 'modal4', img: riceImage, name: 'Product 4', price: '$15.00' },
-    { id: 'modal5', img: riceImage, name: 'Product 5', price: '$20.00' },
+    { id: 'modal1', img: 'https://via.placeholder.com/150', name: 'Product 1', price: '$10.00' },
+    { id: 'modal2', img: 'https://via.placeholder.com/150', name: 'Product 2', price: '$12.00' },
+    { id: 'modal3', img: 'https://via.placeholder.com/150', name: 'Product 3', price: '$8.00' },
+    { id: 'modal4', img: 'https://via.placeholder.com/150', name: 'Product 4', price: '$15.00' },
+    { id: 'modal5', img: 'https://via.placeholder.com/150', name: 'Product 5', price: '$20.00' },
+    { id: 'modal6', img: 'https://via.placeholder.com/150', name: 'Product 5', price: '$20.00' },
+    { id: 'modal7', img: 'https://via.placeholder.com/150', name: 'Product 5', price: '$20.00' },
+    { id: 'modal8', img: 'https://via.placeholder.com/150', name: 'Product 5', price: '$20.00' },
+
     // Add more products as needed
   ];
 
@@ -48,6 +52,7 @@ const FeaturedProducts = () => {
       </div>
       <div className="arrow-container right-arrow" onClick={() => scrollProducts('right')}>&#10095;</div>
       {modalContent && <ProductModal product={modalContent} closeModal={closeModal} />}
+      <div className="category-link">See All</div>
     </section>
   );
 };

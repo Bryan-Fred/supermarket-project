@@ -10,7 +10,7 @@ const ProductModal = ({ product, closeModal }) => {
         </div>
         <h3>{product.name}</h3>
         <p>{product.price}</p>
-        <p>Product description goes here.</p>
+        <p>{product.description}</p>
       </div>
     </div>
   );

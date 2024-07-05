@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  background-color: #dddddd;
+  position: relative;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -40,6 +42,7 @@ code {
   color: white;
   padding: 50px 0;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .slideshow-container {
@@ -88,6 +91,13 @@ code {
   background-color: #717171;
 }
 
+.body-content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .featured-products {
   background-color: white;
   text-align: center;
@@ -95,6 +105,41 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 50px;
+  width: 90%;
+}
+
+.category-section{
+  background-color: white;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 90%;
+}
+
+.category-section h2 {
+  font-size: 2em;
+  color: rgb(76, 175, 80);
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+
+.category-link{
+  font-weight: bold;
+  border: 1px solid black;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  text-transform: capitalize;
 }
 
 .featured-products h2 {
@@ -105,24 +150,22 @@ code {
 
 .products-container {
   display: flex;
-  overflow-x: auto;
+  gap: 10px;
+  overflow-x: hidden;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  height: 500px;
-  width:80%;
+  width: 90%;
 }
 
 .product {
   flex: 0 0 auto;
   display: grid;
-  grid-template-rows: 1fr 100px 50px;
+  grid-template-rows: 1fr 80px 50px;
   background-color: white;
-  border: 1px solid #080202;
-  margin: 10px;
   width: 200px;
   transition: box-shadow 0.3s;
   scroll-snap-align: start;
-  height: 300px;
+  height: 350px;
 }
 
 .product:hover {
@@ -135,16 +178,21 @@ code {
 
 .product img {
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+
+.product-name-price{
+  
 }
 
 .product h3 {
   color: rgb(33, 33, 33);
+  line-height: 10px;
 }
 
 .product .price {
   color: rgb(244, 67, 54);
-  font-size: 1.2em;
+  font-size: 20px;
 }
 
 .quick-view-btn {
@@ -154,6 +202,10 @@ code {
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .quick-view-btn:hover {
@@ -170,11 +222,11 @@ code {
 }
 
 .left-arrow {
-  left: 0;
+  left: 50px;
 }
 
 .right-arrow {
-  right: 0;
+  right: 50px;
 }
 
 .modal {
@@ -219,7 +271,6 @@ code {
   background-color: rgb(72, 93, 102);
   color: white;
   text-align: center;
-  padding: 1rem;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -227,9 +278,11 @@ code {
 
 /* src/CustomerTestimonials.css */
 .customer-testimonials {
-  padding: 20px;
   text-align: center;
   background-color: #f9f9f9;
+  margin-bottom: 100px;
+  width: 90%;
+  padding-bottom: 30px;
 }
 
 .testimonial-header{
@@ -307,26 +360,137 @@ code {
 }
 
 
+.health-tips-section {
+  background-color: #f5f5f5;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tips-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.tip {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tip h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.tip p {
+  color: #666;
+}
+
+.recipes-section {
+  background-color: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recipes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+.recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.recipe-image {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.recipe-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.recipe h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.recipe p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.view-recipe-btn {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-recipe-btn:hover {
+  background-color: #ba0d00;
+}
+
+
+
 @media(max-width: 600px){
     .featured-products{
-    background-color: #dffffb;
-    padding-bottom: 10px;
+      width: 95%;
+  }
+  .category-section{
+    width: 95%;
+  }
+  .category-link{
+    margin-top: 50px;
   }
   .featured-products h2 {
     font-size: 22px;
   }
+  .category-section h2 {
+    font-size: 22px;
+  }
   .products-container {
     padding-bottom: 20px;
-    width:85%;
+    width: 95%;
+    overflow-x: auto;
   }
   .product{
     height: 200px;
-    width: 120px;
+    width: 150px;
     grid-template-rows: 1fr 50px 30px;
     padding: 0;
     margin: 5px;
-    border: none;
-  }
+    }
   .product-image-container{
     background-color: white;
     display: flex;
@@ -362,12 +526,7 @@ code {
     width: 50px;
     height: 50px;
     border-radius: 25px;
-  }
-  .left-arrow{
-    left: 10px;
-  }
-  .right-arrow{
-    right: 10px;
+    display: none;
   }
   .modal-content{
     max-height: 500px;
