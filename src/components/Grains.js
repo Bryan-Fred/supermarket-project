@@ -6,14 +6,14 @@ const Grains = () => {
   const containerRef = useRef(null);
 
   const grainsProducts = [
-    { id: 'modal1', img: 'https://via.placeholder.com/150', name: 'Rice', price: '$1.00/lb', description: 'Premium quality rice.' },
-    { id: 'modal2', img: 'https://via.placeholder.com/150', name: 'Wheat Flour', price: '$2.00/lb', description: 'Whole wheat flour.' },
-    { id: 'modal3', img: 'https://via.placeholder.com/150', name: 'Oats', price: '$3.00', description: 'Organic rolled oats.' },
-    { id: 'modal4', img: 'https://via.placeholder.com/150', name: 'Quinoa', price: '$4.00', description: 'Nutritious quinoa.' },
-    { id: 'modal5', img: 'https://via.placeholder.com/150', name: 'Cornmeal', price: '$1.50', description: 'Ground cornmeal.' },
-    { id: 'modal6', img: 'https://via.placeholder.com/150', name: 'Barley', price: '$2.50', description: 'Whole grain barley.' },
-    { id: 'modal7', img: 'https://via.placeholder.com/150', name: 'Millet', price: '$3.00', description: 'Gluten-free millet.' },
-    { id: 'modal8', img: 'https://via.placeholder.com/150', name: 'Couscous', price: '$2.00', description: 'Moroccan-style couscous.' },
+    { id: 'modal1', img: 'https://m.media-amazon.com/images/I/51m-7JWZpcL.jpg', name: 'Rice', price: '$1.00/lb', description: 'Premium quality rice.' },
+    { id: 'modal2', img: 'https://thumbs.dreamstime.com/b/flour-package-box-isolated-white-transparent-background-300901043.jpg', name: 'Wheat Flour', price: '$2.00/lb', description: 'Whole wheat flour.' },
+    { id: 'modal3', img: 'https://img.freepik.com/premium-photo/3d-rendering-oat-flakes-paper-packaging-isolated-white-background_771335-31722.jpg', name: 'Oats', price: '$3.00', description: 'Organic rolled oats.' },
+    { id: 'modal4', img: 'https://premiumgourmetfood.com.au/wp-content/uploads/2023/05/QUINOA006_Quinoa-Mix-500g.jpg', name: 'Quinoa', price: '$4.00', description: 'Nutritious quinoa.' },
+    { id: 'modal5', img: 'https://oldschool.com/wp-content/uploads/2021/04/OldSchoolMill_2021WhiteBackground-50-MEDIUM.jpg', name: 'Cornmeal', price: '$1.50', description: 'Ground cornmeal.' },
+    { id: 'modal6', img: 'https://cloudfront.timesnownews.com/media/barley.PNG', name: 'Barley', price: '$2.50', description: 'Whole grain barley.' },
+    { id: 'modal7', img: 'https://spicedivine.ca/cdn/shop/products/Project_700x700.jpg?v=1687213656', name: 'Millet', price: '$3.00', description: 'Gluten-free millet.' },
+    { id: 'modal8', img: 'https://www.lidl.es/media/product/0/0/6/6/6/3/4/couscous-zoom.jpg', name: 'Couscous', price: '$2.00', description: 'Moroccan-style couscous.' },
   ];
 
   const openModal = (product) => {

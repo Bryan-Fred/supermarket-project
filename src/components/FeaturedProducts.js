@@ -33,7 +33,7 @@ const FeaturedProducts = () => {
   };
 
   return (
-    <section className="featured-products">
+    <section className="category-section">
       <h2>Featured Products</h2>
       <div className="arrow-container left-arrow" onClick={() => scrollProducts('left')}>&#10094;</div>
       <div className="products-container">

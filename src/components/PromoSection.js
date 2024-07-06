@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 
 const slidesData = [
-  { src: 'veges.jpg', alt: 'Promo 1', text: 'Fresh Vegetables' },
-  { src: 'fruits.jpg', alt: 'Promo 2', text: 'Discounts on Fruits' },
-  { src: 'organic.jpg', alt: 'Promo 3', text: 'Organic Products' },
+  { src: 'https://img.freepik.com/premium-photo/fresh-fruits-supermarket_392895-11434.jpg', alt: 'Promo 1', text: 'Fruits' },
+  { src: 'https://png.pngtree.com/thumb_back/fw800/background/20240522/pngtree-alcoholic-beverages-are-in-supermarkets-image_15693383.jpg', alt: 'Promo 2', text: 'Beverages' },
+  { src: 'https://d3rctclhuobtt7.cloudfront.net/Pictures/1024x536/3/3/1/234331_tesco_957314_crop.jpg', alt: 'Promo 3', text: 'Pastries' },
+  { src: 'https://kevsbest.com/wp-content/uploads/2021/03/Best-Middle-Eastern-Supermarkets-in-Chicago.jpg', alt: 'Promo 4', text: 'Condiments'},
+  { src: 'https://kevsbest.com/wp-content/uploads/2021/03/Best-Middle-Eastern-Supermarkets-in-Chicago.jpg', alt: 'Promo 5', text: 'Pastries'},
+
 ];
 
 const PromoSection = () => {
@@ -24,7 +27,7 @@ const PromoSection = () => {
       }
       slides[slideIndex - 1].style.display = "block";
       dots[slideIndex - 1].className += " active";
-      setTimeout(showSlides, 3000); // Change image every 3 seconds
+      setTimeout(showSlides, 10000); // Change image every 3 seconds
     }
   }, []);
 

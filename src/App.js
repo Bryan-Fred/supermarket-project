@@ -18,8 +18,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <PromoSection />
       <div className="body-content">
+        <PromoSection />
       <FeaturedProducts />
       <Toiletries />
       <FrozenFoods />
