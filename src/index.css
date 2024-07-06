@@ -250,6 +250,11 @@ code {
   text-align: center;
 }
 
+.modal-image{
+  height: 200px;
+  width: 200px;
+}
+
 .close {
   color: #aaa;
   float: right;
@@ -520,14 +525,5 @@ code {
     border-radius: 25px;
     display: none;
   }
-  .modal-content{
-    max-height: 500px;
-  }
-  .modal-image-container{
-    height: 200px;
-    width: 150px;
-    border: 1px solid black;
-    position: relative;
-    left: 25%;
-  }
+
 }
