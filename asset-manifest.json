@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/supermarket-project/static/css/main.24b872ce.css",
-    "main.js": "/supermarket-project/static/js/main.348db214.js",
+    "main.css": "/supermarket-project/static/css/main.376a44da.css",
+    "main.js": "/supermarket-project/static/js/main.89fdc1d4.js",
     "static/js/453.161ef6a9.chunk.js": "/supermarket-project/static/js/453.161ef6a9.chunk.js",
     "index.html": "/supermarket-project/index.html",
-    "main.24b872ce.css.map": "/supermarket-project/static/css/main.24b872ce.css.map",
-    "main.348db214.js.map": "/supermarket-project/static/js/main.348db214.js.map",
+    "main.376a44da.css.map": "/supermarket-project/static/css/main.376a44da.css.map",
+    "main.89fdc1d4.js.map": "/supermarket-project/static/js/main.89fdc1d4.js.map",
     "453.161ef6a9.chunk.js.map": "/supermarket-project/static/js/453.161ef6a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.24b872ce.css",
-    "static/js/main.348db214.js"
+    "static/css/main.376a44da.css",
+    "static/js/main.89fdc1d4.js"
   ]
 }
