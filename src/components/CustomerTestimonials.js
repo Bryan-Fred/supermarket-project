@@ -1,59 +1,54 @@
-// src/CustomerTestimonials.js
 import React from 'react';
 
 const CustomerTestimonials = () => {
-
+  // Example testimonials data
   const testimonials = [
     {
-      name: "John Doe",
+      id: 1,
+      quote: "Great quality products and excellent customer service. Highly recommend!",
+      imageUrl: "https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/social-media-profile-photos-3.jpg", // Placeholder image
+      name: "Samuel Endrick",
       rating: 5,
-      message: "Great service and amazing products!",
-      photo: "https://via.placeholder.com/50",
     },
     {
-      name: "Jane Smith",
+      id: 2,
+      quote: "I always find what I need at this supermarket. The prices are unbeatable.",
+      imageUrl: "https://t3.ftcdn.net/jpg/04/60/91/88/360_F_460918802_XVCymFr7MoziFpnInbTDvrlblYhvAOi2.jpg", // Placeholder image
+      name: "John Smith",
       rating: 4,
-      message: "I love the quality of the products.",
-      photo: "https://via.placeholder.com/50",
     },
     {
-      name: "Alice Johnson",
+      id: 3,
+      quote: "A fantastic shopping experience every time. Friendly staff and fresh produce.",
+      imageUrl: "https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/profile-photos-4.jpg", // Placeholder image
+      name: "Emily Johnson",
       rating: 5,
-      message: "Fast delivery and excellent customer support.",
-      photo: "https://via.placeholder.com/50",
-    },
-    {
-      name: "Michael Brown",
-      rating: 3,
-      message: "Good products, but the prices are a bit high.",
-      photo: "https://via.placeholder.com/50",
     },
   ];
 
   return (
-    <div className="customer-testimonials">
-        <div className="testimonial-header">
-            <div className='left-line'></div>
-            <h2>Customer Testimonials</h2>
-            <div className='right-line'></div>
-        </div>
+    <section className="testimonials-section">
       <div className="testimonials-container">
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className="testimonial-card">
-            <div className="testimonial-content">
-              <div className="customer-info">
-                <div className="customer-photo" style={{ backgroundImage: `url(${testimonial.photo})` }}></div>
-                <h3>{testimonial.name}</h3>
+        <h2>What Our Customers Say</h2>
+        <div className="testimonials-list">
+          {testimonials.map(testimonial => (
+            <div className="testimonial-item" key={testimonial.id}>
+              <div className="testimonial-quote">“</div>
+              <p className="testimonial-comment">{testimonial.quote}</p>
+              <div className="testimonial-customer-info">
+                <div className="testimonial-customer-image" style={{ backgroundImage: `url(${testimonial.imageUrl})` }}></div>
+                <h3 className="testimonial-customer-name">{testimonial.name}</h3>
+                <div className="testimonial-rating">
+                  {Array.from({ length: testimonial.rating }).map((_, index) => (
+                    <span key={index}>&#9733;</span>
+                  ))}
+                </div>
               </div>
-              <div className="customer-rating">
-                {'★'.repeat(testimonial.rating)}{'☆'.repeat(5 - testimonial.rating)}
-              </div>
-              <p>{testimonial.message}</p>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
