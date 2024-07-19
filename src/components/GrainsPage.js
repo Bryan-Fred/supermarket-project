@@ -8,10 +8,10 @@ const GrainsPage = ({ addToCart, cartCount }) => {
 
   // Sample product data for grains (20 products)
   const products = [
-    { id: 1, name: "Rice", price: 2.99, image: "https://example.com/rice.jpg" },
-    { id: 2, name: "Wheat", price: 1.99, image: "https://example.com/wheat.jpg" },
-    { id: 3, name: "Oats", price: 3.49, image: "https://example.com/oats.jpg" },
-    { id: 4, name: "Barley", price: 1.49, image: "https://example.com/barley.jpg" },
+    { id: 1, name: "Rice", price: 2.99, image: "https://ghanaprovisions.com/cdn/shop/products/cindy-rice-5kg.jpg?v=1632402720" },
+    { id: 2, name: "Wheat", price: 1.99, image: "https://cdn11.bigcommerce.com/s-kknankib6z/images/stencil/1280x1280/products/16023/22201/aashirvaad-whole-wheat-flour-10-lbs-aashirvaad__39375.1600114650.jpg?c=2?imbypass=on" },
+    { id: 3, name: "Oats", price: 3.49, image: "https://i.ebayimg.com/thumbs/images/g/S7kAAOSwvbFmju68/s-l1200.jpg" },
+    { id: 4, name: "Barley", price: 1.49, image: "https://yi-files.yellowimages.com/content/2019/04/5cc317f0a26ea.jpg" },
     { id: 5, name: "Quinoa", price: 2.49, image: "https://example.com/quinoa.jpg" },
     { id: 6, name: "Millet", price: 2.99, image: "https://example.com/millet.jpg" },
     { id: 7, name: "Corn", price: 3.99, image: "https://example.com/corn.jpg" },

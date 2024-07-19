@@ -60,10 +60,10 @@ code {
   z-index: 10;
 }
 
-.nav-bar.show{
+/*.nav-bar.show{
   display: flex;
 }
-
+*/
 .header nav ul {
   list-style-type: none;
   margin: 0;
