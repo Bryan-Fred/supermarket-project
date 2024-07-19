@@ -15,7 +15,7 @@ import Pastries from "./Pastries";
 const IndexPage = () => {
   return (
     <div>
-      <Header />
+  
       <div className="body-content">
       <PromoSection />
       <FeaturedProducts />

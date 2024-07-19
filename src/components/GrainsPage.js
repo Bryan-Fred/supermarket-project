@@ -2,32 +2,32 @@ import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const BreakfastPage = ({ addToCart }) => {
+const GrainsPage = ({ addToCart, cartCount }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 20;
 
-  // Sample product data for breakfast items (20 products)
+  // Sample product data for grains (20 products)
   const products = [
-    { id: 1, name: "Cereal", price: 4.99, image: "https://example.com/cereal.jpg" },
-    { id: 2, name: "Granola Bars", price: 3.49, image: "https://example.com/granola-bars.jpg" },
-    { id: 3, name: "Oatmeal", price: 2.99, image: "https://example.com/oatmeal.jpg" },
-    { id: 4, name: "Pancake Mix", price: 5.99, image: "https://example.com/pancake-mix.jpg" },
-    { id: 5, name: "Syrup", price: 3.99, image: "https://example.com/syrup.jpg" },
-    { id: 6, name: "Coffee", price: 7.99, image: "https://example.com/coffee.jpg" },
-    { id: 7, name: "Tea", price: 4.49, image: "https://example.com/tea.jpg" },
-    { id: 8, name: "Bagels", price: 2.49, image: "https://example.com/bagels.jpg" },
-    { id: 9, name: "Cream Cheese", price: 2.99, image: "https://example.com/cream-cheese.jpg" },
-    { id: 10, name: "Yogurt", price: 1.99, image: "https://example.com/yogurt.jpg" },
-    { id: 11, name: "Juice", price: 3.49, image: "https://example.com/juice.jpg" },
-    { id: 12, name: "Milk", price: 2.49, image: "https://example.com/milk.jpg" },
-    { id: 13, name: "Eggs", price: 2.99, image: "https://example.com/eggs.jpg" },
-    { id: 14, name: "Butter", price: 3.99, image: "https://example.com/butter.jpg" },
-    { id: 15, name: "Jam", price: 2.49, image: "https://example.com/jam.jpg" },
-    { id: 16, name: "Muffins", price: 4.49, image: "https://example.com/muffins.jpg" },
-    { id: 17, name: "Fruit", price: 3.49, image: "https://example.com/fruit.jpg" },
-    { id: 18, name: "Toast", price: 1.99, image: "https://example.com/toast.jpg" },
-    { id: 19, name: "Pita Bread", price: 2.99, image: "https://example.com/pita-bread.jpg" },
-    { id: 20, name: "Smoothie Mix", price: 5.49, image: "https://example.com/smoothie-mix.jpg" },
+    { id: 1, name: "Rice", price: 2.99, image: "https://example.com/rice.jpg" },
+    { id: 2, name: "Wheat", price: 1.99, image: "https://example.com/wheat.jpg" },
+    { id: 3, name: "Oats", price: 3.49, image: "https://example.com/oats.jpg" },
+    { id: 4, name: "Barley", price: 1.49, image: "https://example.com/barley.jpg" },
+    { id: 5, name: "Quinoa", price: 2.49, image: "https://example.com/quinoa.jpg" },
+    { id: 6, name: "Millet", price: 2.99, image: "https://example.com/millet.jpg" },
+    { id: 7, name: "Corn", price: 3.99, image: "https://example.com/corn.jpg" },
+    { id: 8, name: "Sorghum", price: 2.49, image: "https://example.com/sorghum.jpg" },
+    { id: 9, name: "Spelt", price: 4.99, image: "https://example.com/spelt.jpg" },
+    { id: 10, name: "Amaranth", price: 3.99, image: "https://example.com/amaranth.jpg" },
+    { id: 11, name: "Teff", price: 1.99, image: "https://example.com/teff.jpg" },
+    { id: 12, name: "Farro", price: 1.49, image: "https://example.com/farro.jpg" },
+    { id: 13, name: "Buckwheat", price: 2.99, image: "https://example.com/buckwheat.jpg" },
+    { id: 14, name: "Rye", price: 3.49, image: "https://example.com/rye.jpg" },
+    { id: 15, name: "Bulgur", price: 2.99, image: "https://example.com/bulgur.jpg" },
+    { id: 16, name: "Freekeh", price: 2.49, image: "https://example.com/freekeh.jpg" },
+    { id: 17, name: "Fonio", price: 3.99, image: "https://example.com/fonio.jpg" },
+    { id: 18, name: "Kamut", price: 4.49, image: "https://example.com/kamut.jpg" },
+    { id: 19, name: "Triticale", price: 4.99, image: "https://example.com/triticale.jpg" },
+    { id: 20, name: "Wild Rice", price: 3.99, image: "https://example.com/wildrice.jpg" },
   ];
 
   // Pagination logic
@@ -49,7 +49,7 @@ const BreakfastPage = ({ addToCart }) => {
   return (
     <div className="main-products-pages">
       <div className="products-pages-unique">
-        <h2>Breakfast</h2>
+        <h2>Grains</h2>
         <div className="products-unique">
           {currentProducts.map(product => (
             <div key={product.id} className="product-unique">
@@ -81,4 +81,4 @@ const BreakfastPage = ({ addToCart }) => {
   );
 };
 
-export default BreakfastPage;
+export default GrainsPage;

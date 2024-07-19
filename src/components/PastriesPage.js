@@ -2,32 +2,32 @@ import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const BreakfastPage = ({ addToCart }) => {
+const PastriesPage = ({ addToCart, cartCount }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 20;
 
-  // Sample product data for breakfast items (20 products)
+  // Sample product data for pastries (20 products)
   const products = [
-    { id: 1, name: "Cereal", price: 4.99, image: "https://example.com/cereal.jpg" },
-    { id: 2, name: "Granola Bars", price: 3.49, image: "https://example.com/granola-bars.jpg" },
-    { id: 3, name: "Oatmeal", price: 2.99, image: "https://example.com/oatmeal.jpg" },
-    { id: 4, name: "Pancake Mix", price: 5.99, image: "https://example.com/pancake-mix.jpg" },
-    { id: 5, name: "Syrup", price: 3.99, image: "https://example.com/syrup.jpg" },
-    { id: 6, name: "Coffee", price: 7.99, image: "https://example.com/coffee.jpg" },
-    { id: 7, name: "Tea", price: 4.49, image: "https://example.com/tea.jpg" },
-    { id: 8, name: "Bagels", price: 2.49, image: "https://example.com/bagels.jpg" },
-    { id: 9, name: "Cream Cheese", price: 2.99, image: "https://example.com/cream-cheese.jpg" },
-    { id: 10, name: "Yogurt", price: 1.99, image: "https://example.com/yogurt.jpg" },
-    { id: 11, name: "Juice", price: 3.49, image: "https://example.com/juice.jpg" },
-    { id: 12, name: "Milk", price: 2.49, image: "https://example.com/milk.jpg" },
-    { id: 13, name: "Eggs", price: 2.99, image: "https://example.com/eggs.jpg" },
-    { id: 14, name: "Butter", price: 3.99, image: "https://example.com/butter.jpg" },
-    { id: 15, name: "Jam", price: 2.49, image: "https://example.com/jam.jpg" },
-    { id: 16, name: "Muffins", price: 4.49, image: "https://example.com/muffins.jpg" },
-    { id: 17, name: "Fruit", price: 3.49, image: "https://example.com/fruit.jpg" },
-    { id: 18, name: "Toast", price: 1.99, image: "https://example.com/toast.jpg" },
-    { id: 19, name: "Pita Bread", price: 2.99, image: "https://example.com/pita-bread.jpg" },
-    { id: 20, name: "Smoothie Mix", price: 5.49, image: "https://example.com/smoothie-mix.jpg" },
+    { id: 1, name: "Croissant", price: 2.99, image: "https://example.com/croissant.jpg" },
+    { id: 2, name: "Donut", price: 1.99, image: "https://example.com/donut.jpg" },
+    { id: 3, name: "Muffin", price: 3.49, image: "https://example.com/muffin.jpg" },
+    { id: 4, name: "Bagel", price: 1.49, image: "https://example.com/bagel.jpg" },
+    { id: 5, name: "Danish", price: 2.49, image: "https://example.com/danish.jpg" },
+    { id: 6, name: "Eclair", price: 2.99, image: "https://example.com/eclair.jpg" },
+    { id: 7, name: "Tart", price: 3.99, image: "https://example.com/tart.jpg" },
+    { id: 8, name: "Scone", price: 2.49, image: "https://example.com/scone.jpg" },
+    { id: 9, name: "Cake", price: 4.99, image: "https://example.com/cake.jpg" },
+    { id: 10, name: "Pie", price: 3.99, image: "https://example.com/pie.jpg" },
+    { id: 11, name: "Brownie", price: 1.99, image: "https://example.com/brownie.jpg" },
+    { id: 12, name: "Cookie", price: 1.49, image: "https://example.com/cookie.jpg" },
+    { id: 13, name: "Cupcake", price: 2.99, image: "https://example.com/cupcake.jpg" },
+    { id: 14, name: "Macaron", price: 3.49, image: "https://example.com/macaron.jpg" },
+    { id: 15, name: "Choux", price: 2.99, image: "https://example.com/choux.jpg" },
+    { id: 16, name: "Puff Pastry", price: 2.49, image: "https://example.com/puff-pastry.jpg" },
+    { id: 17, name: "Strudel", price: 3.99, image: "https://example.com/strudel.jpg" },
+    { id: 18, name: "Cheesecake", price: 4.49, image: "https://example.com/cheesecake.jpg" },
+    { id: 19, name: "Tiramisu", price: 4.99, image: "https://example.com/tiramisu.jpg" },
+    { id: 20, name: "Profiterole", price: 3.99, image: "https://example.com/profiterole.jpg" },
   ];
 
   // Pagination logic
@@ -49,7 +49,7 @@ const BreakfastPage = ({ addToCart }) => {
   return (
     <div className="main-products-pages">
       <div className="products-pages-unique">
-        <h2>Breakfast</h2>
+        <h2>Pastries</h2>
         <div className="products-unique">
           {currentProducts.map(product => (
             <div key={product.id} className="product-unique">
@@ -81,4 +81,4 @@ const BreakfastPage = ({ addToCart }) => {
   );
 };
 
-export default BreakfastPage;
+export default PastriesPage;

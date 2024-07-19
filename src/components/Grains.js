@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import ProductModal from './ProductModal';
+import { Link } from "react-router-dom";
 
 const Grains = () => {
   const [modalContent, setModalContent] = useState(null);
@@ -50,7 +51,9 @@ const Grains = () => {
       </div>
       <div className="arrow-container right-arrow" onClick={() => scrollProducts('right')}>&#10095;</div>
       {modalContent && <ProductModal product={modalContent} closeModal={closeModal} />}
+      <Link to="/grains" className='pages-links'>
       <div className="category-link">See All</div>
+      </Link>
     </section>
   );
 };
