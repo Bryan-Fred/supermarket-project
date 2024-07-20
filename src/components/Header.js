@@ -29,11 +29,13 @@ const Header = ({ cartCount, products, setSearchResults }) => {
         </ul>
       </nav>
       <SearchBar onSearch={handleSearch} />
+      {/*
       <div className="hamburger" onClick={toggleMenu}>
         <div></div>
         <div></div>
         <div></div>
       </div>
+      */}
       <Link to="/cart" className='nav-link'>
         <div className="cart-icon">
           <FiShoppingCart />

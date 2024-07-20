@@ -76,7 +76,7 @@ const BreakfastPage = ({ addToCart }) => {
           </button>
         </div>
       </div>
-      <ToastContainer className="custom-toast-container" />
+       {/*<ToastContainer className="custom-toast-container" />*/}
     </div>
   );
 };
