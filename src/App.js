@@ -10,6 +10,8 @@ import PastriesPage from "./components/PastriesPage";
 import GrainsPage from "./components/GrainsPage";
 import FrozenFoodsPage from "./components/FrozenFoodsPage";
 import SearchResults from "./components/SearchResults";
+import AdminDashboard from './components/AdminDashboard';
+import Dashboard from "./components/Dashboard/Dashboard";
 
 function App() {
   const [cart, setCart] = useState(() => {
@@ -24,11 +26,12 @@ function App() {
   }, [cart]);
 
   const addToCart = (product) => {
-    const existingProduct = cart.find((item) => item.id === product.id);
+    console.log('Product added to cart:', product);
+    const existingProduct = cart.find((item) => item._id === product._id);
     if (existingProduct) {
       setCart(
         cart.map((item) =>
-          item.id === product.id
+          item._id === product._id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         )
@@ -40,26 +43,21 @@ function App() {
 
   const updateCartQuantity = (id, quantity) => {
     setCart(
-      cart.map((item) => (item.id === id ? { ...item, quantity } : item))
+      cart.map((item) => (item._id === id ? { ...item, quantity } : item))
     );
   };
 
   const removeFromCart = (id) => {
-    setCart(cart.filter((item) => item.id !== id));
+    setCart(cart.filter((item) => item._id !== id));
   };
 
   const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
 
-  const products = [
-    { id: 1, name: "Shampoo", price: 5.99, category: "Toiletries", image: "https://theskinstory.in/cdn/shop/files/1_101b2734-5b84-4ccd-97c3-ea15e483f1f0.jpg?v=1704451340" },
-    { id: 2, name: "Frozen Pizza", price: 6.99, category: "Frozen Foods", image: "https://example.com/frozen-pizza.jpg" },
-    // Add more products from other categories
-  ];
-
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Header cartCount={cartCount} products={products} setSearchResults={setSearchResults} /> {/* Pass products and setSearchResults to Header */}
+      <Header cartCount={cartCount} setSearchResults={setSearchResults} />
       <Routes>
+        <Route path="/admin" element={<Dashboard />} />
         <Route path="/" element={<Navigate to="/IndexPage" />} />
         <Route path="IndexPage" element={<IndexPage />} />
         <Route

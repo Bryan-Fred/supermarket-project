@@ -1,34 +1,29 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const GrainsPage = ({ addToCart, cartCount }) => {
+  const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 20;
+  const [loading, setLoading] = useState(true);
 
-  // Sample product data for grains (20 products)
-  const products = [
-    { id: 1, name: "Rice", price: 2.99, image: "https://ghanaprovisions.com/cdn/shop/products/cindy-rice-5kg.jpg?v=1632402720" },
-    { id: 2, name: "Wheat", price: 1.99, image: "https://cdn11.bigcommerce.com/s-kknankib6z/images/stencil/1280x1280/products/16023/22201/aashirvaad-whole-wheat-flour-10-lbs-aashirvaad__39375.1600114650.jpg?c=2?imbypass=on" },
-    { id: 3, name: "Oats", price: 3.49, image: "https://i.ebayimg.com/thumbs/images/g/S7kAAOSwvbFmju68/s-l1200.jpg" },
-    { id: 4, name: "Barley", price: 1.49, image: "https://yi-files.yellowimages.com/content/2019/04/5cc317f0a26ea.jpg" },
-    { id: 5, name: "Quinoa", price: 2.49, image: "https://example.com/quinoa.jpg" },
-    { id: 6, name: "Millet", price: 2.99, image: "https://example.com/millet.jpg" },
-    { id: 7, name: "Corn", price: 3.99, image: "https://example.com/corn.jpg" },
-    { id: 8, name: "Sorghum", price: 2.49, image: "https://example.com/sorghum.jpg" },
-    { id: 9, name: "Spelt", price: 4.99, image: "https://example.com/spelt.jpg" },
-    { id: 10, name: "Amaranth", price: 3.99, image: "https://example.com/amaranth.jpg" },
-    { id: 11, name: "Teff", price: 1.99, image: "https://example.com/teff.jpg" },
-    { id: 12, name: "Farro", price: 1.49, image: "https://example.com/farro.jpg" },
-    { id: 13, name: "Buckwheat", price: 2.99, image: "https://example.com/buckwheat.jpg" },
-    { id: 14, name: "Rye", price: 3.49, image: "https://example.com/rye.jpg" },
-    { id: 15, name: "Bulgur", price: 2.99, image: "https://example.com/bulgur.jpg" },
-    { id: 16, name: "Freekeh", price: 2.49, image: "https://example.com/freekeh.jpg" },
-    { id: 17, name: "Fonio", price: 3.99, image: "https://example.com/fonio.jpg" },
-    { id: 18, name: "Kamut", price: 4.49, image: "https://example.com/kamut.jpg" },
-    { id: 19, name: "Triticale", price: 4.99, image: "https://example.com/triticale.jpg" },
-    { id: 20, name: "Wild Rice", price: 3.99, image: "https://example.com/wildrice.jpg" },
-  ];
+  useEffect(() => {
+    // Fetch products from the server
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/products?category=Grains');
+        setProducts(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   // Pagination logic
   const indexOfLastProduct = currentPage * productsPerPage;
@@ -50,33 +45,43 @@ const GrainsPage = ({ addToCart, cartCount }) => {
     <div className="main-products-pages">
       <div className="products-pages-unique">
         <h2>Grains</h2>
-        <div className="products-unique">
-          {currentProducts.map(product => (
-            <div key={product.id} className="product-unique">
-              <img src={product.image} alt={product.name} />
-              <h3>{product.name}</h3>
-              <p>${product.price.toFixed(2)}</p>
-              <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+        {loading ? (
+          <p>Loading products...</p>
+        ) : (
+          <>
+            {currentProducts.length === 0 ? (
+              <p>No products available.</p>
+            ) : (
+              <div className="products-unique">
+                {currentProducts.map(product => (
+                  <div key={product._id} className="product-unique">
+                    <img src={product.image} alt={product.name} />
+                    <h3>{product.name}</h3>
+                    <p>${product.price.toFixed(2)}</p>
+                    <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+                  </div>
+                ))}
+              </div>
+            )}
+            <div className="pagination-unique">
+              <button
+                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1}
+              >
+                Previous
+              </button>
+              <span>Page {currentPage} of {totalPages}</span>
+              <button
+                onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                disabled={currentPage === totalPages}
+              >
+                Next
+              </button>
             </div>
-          ))}
-        </div>
-        <div className="pagination-unique">
-          <button
-            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-            disabled={currentPage === 1}
-          >
-            Previous
-          </button>
-          <span>Page {currentPage} of {totalPages}</span>
-          <button
-            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-            disabled={currentPage === totalPages}
-          >
-            Next
-          </button>
-        </div>
+          </>
+        )}
       </div>
-       {/*<ToastContainer className="custom-toast-container" />*/}
+      <ToastContainer className="custom-toast-container" />
     </div>
   );
 };
