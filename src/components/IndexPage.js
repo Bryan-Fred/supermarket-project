@@ -12,9 +12,11 @@ import Grains from "./Grains";
 import Breakfast from "./Breakfast";
 import Pastries from "./Pastries";
 
+
 const IndexPage = () => {
   return (
     <div>
+      
       <div className="body-content">
       <PromoSection />
       <FeaturedProducts />

@@ -12,6 +12,9 @@ import FrozenFoodsPage from "./components/FrozenFoodsPage";
 import SearchResults from "./components/SearchResults";
 import AdminDashboard from './components/AdminDashboard';
 import Dashboard from "./components/Dashboard/Dashboard";
+import HeaderPage from "./components/HeaderPage";
+import ScrollToTopButton from "./components/ScrollToTopButton";
+import CustomerSupport from "./components/CustomerSupport";
 
 function App() {
   const [cart, setCart] = useState(() => {
@@ -55,11 +58,13 @@ function App() {
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Header cartCount={cartCount} setSearchResults={setSearchResults} />
+      <HeaderPage cartCount={cartCount} setSearchResults={setSearchResults} />
+      {/*<Header cartCount={cartCount} setSearchResults={setSearchResults} />*/}
+      
       <Routes>
         <Route path="/admin" element={<Dashboard />} />
-        <Route path="/" element={<Navigate to="/IndexPage" />} />
-        <Route path="IndexPage" element={<IndexPage />} />
+        <Route path="/" element={<Navigate to="/homepage" />} />
+        <Route path="homepage" element={<IndexPage />} />
         <Route
           path="/toiletries"
           element={<ToiletriesPage addToCart={addToCart} cartCount={cartCount} />}
@@ -79,7 +84,9 @@ function App() {
         <Route path="/grains" element={<GrainsPage addToCart={addToCart} cartCount={cartCount} />} />
         <Route path="/FrozenFoods" element={<FrozenFoodsPage addToCart={addToCart} cartCount={cartCount} />} />
         <Route path="/search" element={<SearchResults results={searchResults} />} />
+        <Route path="/support" element={<CustomerSupport/>} />
       </Routes>
+      <ScrollToTopButton />
     </BrowserRouter>
   );
 }
